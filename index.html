@@ -1,397 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aulas Particulares Premium | Resultados Extraordinários</title>
+    <title>SETE Estúdio Educacional | Links</title>
     
-    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Ícones (Phosphor Icons) -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            DEFAULT: '#FE4D24', // Laranja principal solicitado
-                            dark: '#E03D1A',
-                            light: '#FF704E',
-                            soft: '#FFF0ED'
-                        },
-                        dark: '#1A1A1A',
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,800;1,800&display=swap" rel="stylesheet">
 
     <style>
-        /* Estilos adicionais para animações e refinamentos */
+        /* Variáveis de Cores Baseadas na Logo */
+        :root {
+            --cor-laranja: #fe4d24; /* Laranja extraído da logo */
+            --cor-fundo: #FAFAFA;
+            --cor-texto: #333333;
+            --cor-branca: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
+            background-color: var(--cor-fundo);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--cor-texto);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
         }
-        .hero-pattern {
-            background-image: radial-gradient(#FE4D24 0.5px, transparent 0.5px), radial-gradient(#FE4D24 0.5px, #ffffff 0.5px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-            background-opacity: 0.05;
+
+        /* Container principal estilo mobile */
+        .container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .blob-shape {
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            animation: morph 8s ease-in-out infinite;
+
+        /* Estilo da Logo */
+        .logo-container {
+            margin-bottom: 2.5rem;
+            text-align: center;
         }
-        @keyframes morph {
-            0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-            34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
-            67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+
+        .logo {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+            /* Um leve sombreamento para destacar a logo do fundo */
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.05)); 
+        }
+
+        /* Container dos Links */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* Espaçamento entre os botões */
+        }
+
+        /* Estilo dos Botões */
+        .link-btn {
+            background-color: var(--cor-laranja);
+            color: var(--cor-branca);
+            text-decoration: none;
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(240, 78, 35, 0.2);
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Efeito ao passar o mouse ou tocar */
+        .link-btn:hover, .link-btn:active {
+            background-color: var(--cor-fundo);
+            color: var(--cor-laranja);
+            border: 2px solid var(--cor-laranja);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(240, 78, 35, 0.3);
+        }
+
+        /* Rodapé */
+        footer {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            font-weight: 800;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-2">
-                    <img src="LOGO - SETE - FINAL-03.png" alt="SETE Estúdio Educacional Logo" class="h-10 w-auto object-contain">
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#sobre" class="text-gray-600 hover:text-brand font-medium transition-colors">Nossa Metodologia</a>
-                    <a href="#diferenciais" class="text-gray-600 hover:text-brand font-medium transition-colors">Diferenciais</a>
-                    <a href="#investimento" class="text-gray-600 hover:text-brand font-medium transition-colors">Pacotes</a>
-                </div>
-                <div>
-                    <a href="https://wa.me/5591986065958?text=Olá!%20Gostaria%20de%20agendar%20uma%20aula%20particular." target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-brand/30 hover:shadow-brand/50 hover:-translate-y-0.5">
-                        <i class="ph-fill ph-whatsapp text-xl"></i>
-                        Agendar Agora
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div class="container">
+        <header class="logo-container">
+            <img src="LOGO - SETE - FINAL-03.png" alt="Logo SETE Estúdio Educacional" class="logo">
+        </header>
 
-    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden relative">
-        <!-- Elementos decorativos de fundo -->
-        <div class="absolute top-0 left-0 w-full h-full bg-brand/5 -z-10" style="clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);"></div>
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand/20 blur-3xl rounded-full -z-10"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                
-                <!-- Textos Hero -->
-                <div class="flex-1 text-center lg:text-left">
-                    <div class="inline-block bg-brand-soft text-brand font-semibold px-4 py-1.5 rounded-full text-sm mb-6 border border-brand/20 shadow-sm">
-                        ⭐ O Padrão de Ouro em Ensino
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-tight mb-6">
-                        Resultados Extraordinários no <span class="text-brand relative inline-block">
-                            conforto
-                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand/30" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="transparent"/></svg>
-                        </span> da sua Casa em Goiânia.
-                    </h1>
-                    <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Aulas particulares especializadas para alunos dos colégios mais exigentes da capital (Arena, WR, WRJr e outros). Potencialize suas notas com professores de elite.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="https://wa.me/5591986065958?text=Olá!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20aula." target="_blank" class="flex justify-center items-center gap-2 bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl shadow-brand/40 hover:shadow-2xl hover:shadow-brand/50 hover:-translate-y-1">
-                            <i class="ph-fill ph-whatsapp text-2xl"></i>
-                            Agende sua aula
-                        </a>
-                        <a href="#investimento" class="flex justify-center items-center px-8 py-4 rounded-full font-bold text-gray-700 hover:bg-gray-100 transition-all border-2 border-gray-200">
-                            Ver Pacotes
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Imagem Hero -->
-                <div class="flex-1 relative w-full max-w-lg lg:max-w-none mx-auto">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-500 ring-8 ring-white">
-                        <img src="Gemini_Generated_Image_emgzsqemgzsqemgz.png" alt="Professor do SETE chegando para aula" class="w-full h-auto object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent"></div>
-                    </div>
-                    <!-- Badge flutuante -->
-                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
-                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                            <i class="ph-bold ph-trend-up text-2xl"></i>
-                        </div>
-                        <div>
-                            <p class="text-lg font-bold text-dark">Média 9.8</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="diferenciais" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Por que escolher nossa tutoria?</h2>
-                <p class="text-gray-600 text-lg">Não somos apenas aulas de reforço. Somos um programa de alta performance desenhado para a realidade da exigência extrema.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-brand/30 hover:shadow-lg transition-all group">
-                    <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-brand mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ph-fill ph-student text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-3">Foco na Alta Exigência</h3>
-                    <p class="text-gray-600 leading-relaxed">Atendemos alunos do Arena, WR, WRJr, e outros colégios de alto padrão. Dominamos o currículo dessas instituições.</p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-brand/30 hover:shadow-lg transition-all group">
-                    <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-brand mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ph-fill ph-chalkboard-teacher text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-3">Professores de Elite</h3>
-                    <p class="text-gray-600 leading-relaxed">Equipe extremamente capacitada, rigorosamente selecionada e acostumada com a realidade das escolas particulares de elite.</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-brand/30 hover:shadow-lg transition-all group">
-                    <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-brand mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ph-fill ph-clock-user text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-3">Horário Flexível</h3>
-                    <p class="text-gray-600 leading-relaxed">Adaptamos os encontros à sua agenda. Queremos que o estudo potencialize a rotina, sem causar sobrecarga.</p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-brand/30 hover:shadow-lg transition-all group">
-                    <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-brand mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ph-fill ph-house-line text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-3">No Conforto do Lar</h3>
-                    <p class="text-gray-600 leading-relaxed">Ganhe tempo e evite o trânsito. Levamos a excelência acadêmica até a sua casa em um ambiente seguro.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-dark text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
-                <div class="flex-1 relative w-full">
-                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-800">
-                        <img src="Gemini_Generated_Image_lt60rdlt60rdlt60.png" alt="Aula particular com professora do SETE" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity">
-                    </div>
-                </div>
-                
-                <div class="flex-1">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">A escola vai até você. <span class="text-brand">Sem estresse, sem atrasos.</span></h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        Entendemos que a rotina da sua família é corrida. Nossos professores vão até sua residência, uniformizados, pontuais e com todo o material necessário para transformar a sala de jantar ou de estudos em uma verdadeira central de aprovação.
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3">
-                            <i class="ph-bold ph-check-circle text-brand text-2xl"></i>
-                            <span class="text-gray-200">Profissionais verificados e de confiança.</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="ph-bold ph-check-circle text-brand text-2xl"></i>
-                            <span class="text-gray-200">Atendimento em toda a capital.</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="ph-bold ph-check-circle text-brand text-2xl"></i>
-                            <span class="text-gray-200">Acompanhamento psicológico do ritmo do aluno.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre" class="py-20 bg-brand-soft/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                
-                <div class="flex-1 order-2 lg:order-1">
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Metodologia que <span class="text-brand">Gera Resultados Reais</span></h2>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                        Nossas aulas são 100% personalizadas. Nós não apenas repetimos o conteúdo da escola; nós identificamos lacunas de aprendizado, ensinamos técnicas de estudo e preparamos os alunos para as provas mais difíceis do calendário escolar.
-                    </p>
-                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Trabalhamos lado a lado com seu filho para garantir que o conhecimento seja consolidado de forma definitiva, gerando autoconfiança e independência nos estudos.
-                    </p>
-                    <a href="https://wa.me/5591986065958?text=Olá!%20Gostaria%20de%20entender%20mais%20sobre%20a%20metodologia%20de%20vocês." target="_blank" class="inline-flex items-center gap-2 bg-dark hover:bg-black text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:-translate-y-1">
-                        Falar com Coordenação Pedagógica
-                        <i class="ph-bold ph-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="flex-1 order-1 lg:order-2 w-full relative">
-                    <!-- Decorativo atrás da imagem -->
-                    <div class="absolute inset-0 bg-brand translate-x-4 translate-y-4 rounded-2xl -z-10"></div>
-                    <img src="Gemini_Generated_Image_2cnrte2cnrte2cnr.png" alt="Crescimento contínuo do aluno com gráficos" class="w-full h-auto rounded-2xl shadow-xl object-cover">
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <section id="investimento" class="py-24 bg-gray-50 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main class="links-container">
+            <a href="https://wa.me/5562995180451?text=Oii%20gostaria%20de%20agendar%20uma%20aula%20particular%20especificamente%20com%20o%20professor%20Lucas%20Ghiraldi." class="link-btn">Agendamento de aulas particulares com prof. Lucas Ghiraldi</a>
             
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Invista no Futuro do Seu Filho</h2>
-                <p class="text-gray-600 text-lg">Oferecemos aulas avulsas, mas nossos pacotes foram desenhados para garantir acompanhamento contínuo e oferecer o melhor custo-benefício.</p>
-            </div>
+            <a href="https://white-buffalo-622630.hostingersite.com/aulas-particulares" class="link-btn">Agendamento de aulas particulares em casa</a>
+            
+            <a href="https://white-buffalo-622630.hostingersite.com/curso-de-ferias" class="link-btn">Matrícula no curso UNIEVA/PUC de férias</a>
+            
+            <a href="https://white-buffalo-622630.hostingersite.com/curso-2-semestre" class="link-btn">Matricula no curso UNIEVA/PUC - 2° Semestre</a>
+        
+            <a href="https://white-buffalo-622630.hostingersite.com/curso-de-ferias" class="link-btn">Matrícula no curso de férias VUNESP/ENEM</a>
 
-            <!-- Tabela de Preços responsiva (Cards) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                
-                <!-- Card 1 Aula -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow flex flex-col">
-                    <h3 class="text-xl font-bold text-dark mb-2">Aula Avulsa</h3>
-                    <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-gray-100">Para dúvidas pontuais antes da prova.</p>
-                    <div class="mb-6 flex-grow">
-                        <span class="text-4xl font-extrabold text-dark">R$ 120</span>
-                        <span class="text-gray-500">/aula</span>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="ph-bold ph-check text-brand"></i> 1 hora de aula
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="ph-bold ph-check text-brand"></i> Deslocamento incluso
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/5591986065958?text=Olá,%20quero%20agendar%201%20aula%20avulsa." target="_blank" class="w-full block text-center bg-gray-100 hover:bg-gray-200 text-dark font-semibold py-3 rounded-xl transition-colors">Agendar Avulsa</a>
-                </div>
+             <a href="https://white-buffalo-622630.hostingersite.com/duvidas" class="link-btn">Dúvidas sobre a plataforma VUNESP</a>
+        </main>
 
-                <!-- Card 5 Aulas -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow flex flex-col">
-                    <h3 class="text-xl font-bold text-dark mb-2">Pacote Básico</h3>
-                    <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-gray-100">Ideal para preparação bimestral.</p>
-                    <div class="mb-6 flex-grow">
-                        <span class="text-4xl font-extrabold text-brand">R$ 550</span>
-                        <p class="text-sm text-gray-400 mt-1">R$ 110 por aula</p>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="ph-bold ph-check text-brand"></i> 5 horas de aula
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="ph-bold ph-check text-brand"></i> Desconto aplicado
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-600 font-medium text-brand">
-                            <i class="ph-bold ph-star text-brand"></i> Prioridade de Agenda
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/5591986065958?text=Olá,%20tenho%20interesse%20no%20pacote%20de%205%20aulas." target="_blank" class="w-full block text-center bg-brand-soft hover:bg-brand/20 text-brand font-semibold py-3 rounded-xl transition-colors">Escolher Pacote</a>
-                </div>
+        <footer>
+            SETE ESTÚDIO EDUCACIONAL
+        </footer>
+    </div>
 
-                <!-- Card 10 Aulas (Destaque) -->
-                <div class="bg-brand rounded-2xl p-8 border border-brand shadow-2xl shadow-brand/30 transform lg:-translate-y-4 relative flex flex-col">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-dark text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                        Mais Procurado
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Pacote Mensal</h3>
-                    <p class="text-white/80 text-sm mb-6 pb-6 border-b border-white/20">Acompanhamento contínuo intensivo.</p>
-                    <div class="mb-6 flex-grow">
-                        <span class="text-4xl font-extrabold text-white">R$ 1.000</span>
-                        <p class="text-sm text-white/80 mt-1">R$ 100 por aula</p>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-2 text-sm text-white">
-                            <i class="ph-bold ph-check text-white"></i> 10 horas de aula
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-white">
-                            <i class="ph-bold ph-check text-white"></i> Grande economia
-                        </li>
-                        <li class="flex items-center gap-2 text-sm font-bold text-white">
-                            <i class="ph-fill ph-star text-yellow-300"></i> Escolha de Professor
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/5591986065958?text=Olá,%20quero%20o%20pacote%20mensal%20de%2010%20aulas!" target="_blank" class="w-full block text-center bg-white hover:bg-gray-50 text-brand font-bold py-3 rounded-xl transition-colors shadow-lg">Garantir Pacote</a>
-                </div>
-
-                <!-- Card 20 Aulas -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow flex flex-col">
-                    <h3 class="text-xl font-bold text-dark mb-2">Pacote Semestral</h3>
-                    <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-gray-100">Garantia de tranquilidade anual.</p>
-                    <div class="mb-6 flex-grow">
-                        <span class="text-4xl font-extrabold text-brand">R$ 1.800</span>
-                        <p class="text-sm text-gray-400 mt-1">Apenas R$ 90 por aula</p>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="ph-bold ph-check text-brand"></i> 20 horas de aula
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="ph-bold ph-check text-brand"></i> Melhor valor de hora
-                        </li>
-                        <li class="flex items-center gap-2 text-sm font-medium text-brand">
-                            <i class="ph-bold ph-star text-brand"></i> Status VIP
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/5591986065958?text=Olá,%20tenho%20interesse%20no%20pacote%20de%2020%20aulas." target="_blank" class="w-full block text-center bg-brand-soft hover:bg-brand/20 text-brand font-semibold py-3 rounded-xl transition-colors">Escolher Pacote</a>
-                </div>
-
-            </div>
-
-            <!-- Aviso Importante -->
-            <div class="mt-12 bg-orange-50 border border-orange-200 rounded-xl p-6 max-w-4xl mx-auto flex items-start gap-4">
-                <i class="ph-fill ph-info text-brand text-3xl shrink-0 mt-1"></i>
-                <div>
-                    <h4 class="font-bold text-dark text-lg mb-1">Importante</h4>
-                    <p class="text-gray-700">Alunos que adquirem <strong>pacotes de aulas (5, 10 ou 20) possuem total prioridade</strong> no agendamento dos melhores horários e na escolha do perfil de professor que melhor se adapta à metodologia do aluno.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="py-16 bg-brand text-center px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Pronto para elevar as notas e garantir o aprendizado?</h2>
-        <p class="text-brand-soft text-lg mb-8 max-w-2xl mx-auto">Não deixe as dificuldades se acumularem. Fale com nossa equipe agora e agende a primeira aula para esta semana.</p>
-        <a href="https://wa.me/5591986065958?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20uma%20aula%20particular.%20" target="_blank" class="inline-flex items-center gap-3 bg-white text-brand px-10 py-5 rounded-full font-bold text-xl hover:bg-gray-50 transition-all shadow-2xl hover:shadow-white/20 hover:-translate-y-1">
-            <i class="ph-fill ph-whatsapp text-3xl text-green-500"></i>
-            Chamar no WhatsApp
-        </a>
-    </section>
-
-    <footer class="bg-dark text-gray-400 py-10 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <img src="LOGO - SETE - FINAL-03.png" alt="SETE Estúdio Educacional Logo" class="h-8 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity">
-            </div>
-            <p class="text-sm">© 2026 SETE Estúdio Educacional. Todos os direitos reservados.</p>
-            <div class="flex gap-4">
-                <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-instagram-logo text-2xl"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-facebook-logo text-2xl"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Efeito de sombra na Navbar ao rolar a página
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 20) {
-                nav.classList.add('shadow-md');
-                nav.classList.replace('bg-white/90', 'bg-white');
-            } else {
-                nav.classList.remove('shadow-md');
-                nav.classList.replace('bg-white', 'bg-white/90');
-            }
-        });
-    </script>
 </body>
 </html>
